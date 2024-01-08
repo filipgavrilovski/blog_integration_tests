@@ -1,6 +1,8 @@
 const { defineConfig } = require("cypress");
+const { env } = require('../blog_integration_tests/env/env')
 
 module.exports = defineConfig({
+  env: env,
   e2e: {
     baseUrl: 'http://localhost:3000/',
     // setupNodeEvents(on, config) {
@@ -15,6 +17,7 @@ module.exports = defineConfig({
     //   return config
     // },
   },
+  waitForNetworkIdle: 1000,
   watchForFileChanges: false,
   numTestsKeptInMemory: 1,
   chromeWebSecurity: false,

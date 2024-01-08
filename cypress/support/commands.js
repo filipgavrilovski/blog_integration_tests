@@ -26,3 +26,16 @@
 
 
 // <reference types="cypress-xpath" />
+
+/**
+ * waitForNetworkIdle with default timeout.
+ */
+
+import 'cypress-network-idle'
+
+
+//  Cypress.Commands.add(
+//     'waitForNetwork',
+//     (idleTimeout = Cypress.env('idleTimeOut')) =>
+//       cy.waitForNetworkIdle(idleTimeout)
+//   )

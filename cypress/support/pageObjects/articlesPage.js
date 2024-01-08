@@ -16,6 +16,13 @@ const ArticlesPage = {
    articleFromList: (articleName) => cy.xpath(`//li//a[text()="${articleName}"]`),
 
 
+   /**
+   * The "New Article" button
+   * @returns {Cypress.Chainable<JQuery<HTMLElement>>}
+   */
+   newArticleButton: () => cy.xpath('//a[text()="New Article"]')
+
+
 }
 
 export { ArticlesPage }
