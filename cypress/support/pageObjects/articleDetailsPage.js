@@ -1,6 +1,9 @@
+import { NewArticlePage } from "./newArticlePage"
 
 
 const ArticleDetailsPage = {
+
+    ...NewArticlePage,
 
     /**
     * The text field for the article title
@@ -26,9 +29,45 @@ const ArticleDetailsPage = {
     * The "Status of article" field, that shows the status of the article
     * @returns {Cypress.Chainable<JQuery<HTMLElement>>}
     */
-     statusOfArticleField: () => cy.xpath('//strong[text()="Status of article:"]/parent::*')
- 
+     statusOfArticleField: () => cy.xpath('//strong[text()="Status of article:"]/parent::*'),
 
+
+     /**
+    * The "Edit" button
+    * @returns {Cypress.Chainable<JQuery<HTMLElement>>}
+    */
+     editButton: () => cy.xpath('//a[text()="Edit"]'),
+
+
+
+      /**
+    * The "Delete" button
+    * @returns {Cypress.Chainable<JQuery<HTMLElement>>}
+    */
+     deleteButton: () => cy.xpath('//a[text()="Delete"]'),
+
+
+     /**
+    * The "Update Article" button
+    * @returns {Cypress.Chainable<JQuery<HTMLElement>>}
+    */
+     updateArticleButton: () => cy.xpath('//input[@value="Update Article"]'),
+
+
+     commenterInputField: () => cy.get('#comment_commenter'),
+
+     commentBodyInputField: () => cy.get('#comment_body'),
+
+     createCommentButton: () => cy.xpath('//input[@name="commit"]'),
+
+     commentStatusSelectButton: () => cy.xpath('//select[@name="comment[status]"]'),
+
+     commenterField: (commenter) => cy.xpath(`//span[text()="${commenter}"]`),
+
+     commentField: (comment) => cy.xpath(`//span[text()="${comment}"]`),
+
+     deleteCommentButton: (commenter) => cy.xpath(`//span//span[text()="${commenter}"]/ancestor::*[@class="comment"]//a`)
+     
  }
  
  export { ArticleDetailsPage }

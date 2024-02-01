@@ -1,0 +1,31 @@
+{
+  "name": "blog_integration_tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cypress.config.js",
+  "dependencies": {
+    "@faker-js/faker": "^8.4.0",
+    "cypress": "^13.6.2",
+    "cypress-network-idle": "^1.14.2",
+    "cypress-xpath": "^2.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.29.1",
+    "faker": "^5.5.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/filipgavrilovski/blog_integration_tests.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/filipgavrilovski/blog_integration_tests/issues"
+  },
+  "homepage": "https://github.com/filipgavrilovski/blog_integration_tests#readme"
+}
