@@ -1,11 +1,9 @@
 import { faker } from '@faker-js/faker';
 import { ArticlesPage } from '../support/pageObjects/articlesPage.js';
 import { ArticleDetailsPage } from '../support/pageObjects/ArticleDetailsPage.js';
-import { NewArticlePage } from '../support/pageObjects/newArticlePage.js';
 import 'cypress-network-idle';
 
 describe('Comments tests', () => {
-  let articleTitle;
   const listOfStauses = ['public', 'private'];
   beforeEach(() => {
     cy.visit('/');
@@ -16,13 +14,13 @@ describe('Comments tests', () => {
       commentBody: faker.lorem.lines(1),
       commentStatus: listOfStauses[Math.floor(Math.random() * listOfStauses.length)],
     };
-    cy.log("CLICK ON THE FIRST ARTICLE FROM THE LIST").then(() => {
+    cy.log('CLICK ON THE FIRST ARTICLE FROM THE LIST').then(() => {
       ArticlesPage.articlesList().find('li').find('a').first()
-      .invoke('text')
-      .then((titleOfFirstArticle) => {
-        ArticlesPage.articleFromList(titleOfFirstArticle).click();
-      });
-    })
+        .invoke('text')
+        .then((titleOfFirstArticle) => {
+          ArticlesPage.articleFromList(titleOfFirstArticle).click();
+        });
+    });
     ArticleDetailsPage.commenterInputField().type(commentData.commenter);
     ArticleDetailsPage.commentBodyInputField().type(commentData.commentBody);
     ArticleDetailsPage.commentStatusSelectButton().type(commentData.commentStatus);
@@ -38,13 +36,13 @@ describe('Comments tests', () => {
       commentBody: faker.lorem.lines(1),
       commentStatus: listOfStauses[Math.floor(Math.random() * listOfStauses.length)],
     };
-    cy.log("CLICK ON THE FIRST ARTICLE FROM THE LIST").then(() => {
-    ArticlesPage.articlesList().find('li').find('a').first()
-      .invoke('text')
-      .then((titleOfFirstArticle) => {
-        ArticlesPage.articleFromList(titleOfFirstArticle).click();
-      });
-    })
+    cy.log('CLICK ON THE FIRST ARTICLE FROM THE LIST').then(() => {
+      ArticlesPage.articlesList().find('li').find('a').first()
+        .invoke('text')
+        .then((titleOfFirstArticle) => {
+          ArticlesPage.articleFromList(titleOfFirstArticle).click();
+        });
+    });
     ArticleDetailsPage.commenterInputField().type(commentData.commenter);
     ArticleDetailsPage.commentBodyInputField().type(commentData.commentBody);
     ArticleDetailsPage.commentStatusSelectButton().type(commentData.commentStatus);
