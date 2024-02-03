@@ -1,10 +1,10 @@
-const { defineConfig } = require("cypress");
-const { env } = require('../blog_integration_tests/env/env')
+const { defineConfig } = require('cypress');
+const { env } = require('./env/env');
 
 module.exports = defineConfig({
-  env: env,
+  env,
   e2e: {
-    baseUrl: 'http://localhost:3000/',
+    baseUrl: 'https://ancient-escarpment-00115-8b8977df9a1a.herokuapp.com/',
     // setupNodeEvents(on, config) {
     //   on('before:run', async (details) => {
     //     await beforeRunHook(details)
@@ -41,6 +41,6 @@ module.exports = defineConfig({
   screenshotOnRunFailure: true,
   video: false,
   retries: {
-    runMode: 2
-  }
+    runMode: 2,
+  },
 });

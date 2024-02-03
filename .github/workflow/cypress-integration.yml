@@ -1,0 +1,30 @@
+name: Cypress Integration Tests
+
+on:
+  repository_dispatch:
+    types: [cypress-dev]
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: 'cypress-integration'
+  cancel-in-progress: false
+
+jobs:
+  run_tests:
+    name: UI Integration Specs
+    runs-on: ubuntu-latest
+  all_specs:
+    name: UI Integration Specs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Cypress run
+        uses: cypress-io/github-action@v5
+        with:
+          command: npx cypress run --config-file cypress.config.js
+          browser: electron
+          group: 'All Specs'
