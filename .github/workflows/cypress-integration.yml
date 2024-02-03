@@ -5,7 +5,7 @@ on:
     types: [cypress-dev]
   push:
     branches:
-      - main
+      - master
   workflow_dispatch:
 
 concurrency:
