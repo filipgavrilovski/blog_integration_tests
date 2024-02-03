@@ -16,6 +16,10 @@ jobs:
   run_tests:
     name: UI Integration Specs
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        containers: [1]
     steps:
       - name: Checkout
         uses: actions/checkout@v3
