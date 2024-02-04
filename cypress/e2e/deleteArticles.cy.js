@@ -1,5 +1,5 @@
-import { ArticlesPage } from '../support/pageObjects/articlesPage.js';
-import { ArticleDetailsPage } from '../support/pageObjects/ArticleDetailsPage.js';
+import { ArticlesPage } from '../support/pageObjects/articlesPage';
+import { ArticleDetailsPage } from '../support/pageObjects/ArticleDetailsPage';
 import 'cypress-network-idle';
 
 describe('New Article Page tests', () => {

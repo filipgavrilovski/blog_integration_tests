@@ -1,7 +1,7 @@
 
-import { ArticlesPage } from '../support/pageObjects/articlesPage.js'
-import { ArticleDetailsPage } from '../support/pageObjects/ArticleDetailsPage.js'
-import { NewArticlePage } from '../support/pageObjects/newArticlePage.js';
+import { ArticlesPage } from '../support/pageObjects/articlesPage'
+import { ArticleDetailsPage } from '../support/pageObjects/ArticleDetailsPage'
+import { NewArticlePage } from '../support/pageObjects/newArticlePage';
 import { faker } from '@faker-js/faker';
 import 'cypress-network-idle'
 

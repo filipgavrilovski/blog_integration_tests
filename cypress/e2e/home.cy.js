@@ -1,6 +1,6 @@
 
-import { ArticlesPage } from '../support/pageObjects/articlesPage.js'
-import { ArticleDetailsPage } from '../support/pageObjects/ArticleDetailsPage.js'
+import { ArticlesPage } from '../support/pageObjects/articlesPage'
+import { ArticleDetailsPage } from '../support/pageObjects/ArticleDetailsPage'
 
 describe('Article page tests', () => {
   beforeEach(() =>{
