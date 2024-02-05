@@ -33,6 +33,6 @@ jobs:
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: Api Tests Report - RTC
+          name: Test Report
           path: cypress/reports/Report.html
           retention-days: 30
