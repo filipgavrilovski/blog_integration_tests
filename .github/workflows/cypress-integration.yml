@@ -29,3 +29,10 @@ jobs:
           command: npx cypress run --config-file cypress.config.js
           browser: electron
           group: 'All Specs'
+      - name: Uploading test reports
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: Api Tests Report - RTC
+          path: cypress/reports/Report.html
+          retention-days: 30
