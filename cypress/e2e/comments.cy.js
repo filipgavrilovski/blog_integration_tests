@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
 import { ArticlesPage } from '../support/pageObjects/articlesPage';
-import { ArticleDetailsPage } from '../support/pageObjects/ArticleDetailsPage';
+import { ArticleDetailsPage } from '../support/pageObjects/articleDetailsPage';
 import 'cypress-network-idle';
 
 describe('Comments tests', () => {
