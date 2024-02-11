@@ -1,10 +1,29 @@
 import { faker } from '@faker-js/faker';
 import { ArticlesPage } from '../support/pageObjects/articlesPage';
 import { ArticleDetailsPage } from '../support/pageObjects/articleDetailsPage';
+import { NewArticlePage } from '../support/pageObjects/newArticlePage';
+
 import 'cypress-network-idle';
 
 describe('Comments tests', () => {
   const listOfStauses = ['public', 'private'];
+  before(() => {
+    let listOfStauses = ['public','private']
+    let newArticleData = {
+      articleTitle: faker.lorem.lines(1),
+      articleBody: faker.lorem.lines(1),
+      articleStatus: listOfStauses[Math.floor(Math.random() * listOfStauses.length)]
+    }
+    cy.visit('/');
+    ArticlesPage.newArticleButton().click()
+    cy.log("CREATE THE NEW ARTICLE").then(() => {
+      NewArticlePage.articleTitleInputField().type(newArticleData.articleTitle)
+      NewArticlePage.articleBodyTextField().type(newArticleData.articleBody)
+      NewArticlePage.statusSelectField().select(newArticleData.articleStatus)
+      NewArticlePage.createArticleButton().click()
+      cy.waitForNetworkIdle(Cypress.env('waitForNetworkIdle'))
+    })
+  })
   beforeEach(() => {
     cy.visit('/');
   });

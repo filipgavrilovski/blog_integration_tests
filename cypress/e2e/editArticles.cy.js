@@ -8,6 +8,22 @@ import 'cypress-network-idle'
 describe('Edit Article Page tests', () => {
   let articleTitle
   let listOfStauses = ['public','private']
+  before(() => {
+    cy.visit('/');
+    let newArticleData = {
+      articleTitle: faker.lorem.lines(1),
+      articleBody: faker.lorem.lines(1),
+      articleStatus: listOfStauses[Math.floor(Math.random() * listOfStauses.length)]
+    }
+    ArticlesPage.newArticleButton().click()
+    cy.log("CREATE THE NEW ARTICLE").then(() => {
+      NewArticlePage.articleTitleInputField().type(newArticleData.articleTitle)
+      NewArticlePage.articleBodyTextField().type(newArticleData.articleBody)
+      NewArticlePage.statusSelectField().select(newArticleData.articleStatus)
+      NewArticlePage.createArticleButton().click()
+      cy.waitForNetworkIdle(Cypress.env('waitForNetworkIdle'))
+    })
+  })
   beforeEach(() => {
     cy.visit('/')
     cy.log("GET THE TITLE OF THE FIRST ARTICLE FROM THE LIST").then(() => {
