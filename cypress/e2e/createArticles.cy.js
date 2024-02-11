@@ -18,7 +18,6 @@ describe('New Article Page tests', () => {
     }
     ArticlesPage.newArticleButton().click()
     cy.log("CREATE THE NEW ARTICLE").then(() => {
-      ArticleDetailsPage.allArticlesButton().click()
       NewArticlePage.articleTitleInputField().type(newArticleData.articleTitle)
       NewArticlePage.articleBodyTextField().type(newArticleData.articleBody)
       NewArticlePage.statusSelectField().select(newArticleData.articleStatus)
