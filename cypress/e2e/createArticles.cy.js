@@ -9,13 +9,14 @@ describe('New Article Page tests', () => {
   beforeEach(() => {
     cy.visit('/')
   })
-  it('User creates a new article', () => {
+  it.only('User creates a new article', () => {
     let listOfStauses = ['public','private']
     let newArticleData = {
       articleTitle: faker.lorem.lines(1),
       articleBody: faker.lorem.lines(1),
       articleStatus: listOfStauses[Math.floor(Math.random() * listOfStauses.length)]
     }
+    NewArticlePage.articleTitleInputField().type(newArticleData.articleTitle)
     ArticlesPage.newArticleButton().click()
     cy.log("CREATE THE NEW ARTICLE").then(() => {
       NewArticlePage.articleTitleInputField().type(newArticleData.articleTitle)
