@@ -3,7 +3,8 @@ name: Create and publish the Cypress Docker image
 on:
   push:
     branches:
-      - [main, add_docker]
+      - main
+      - add_docker
   workflow_dispatch:
 
 env:
