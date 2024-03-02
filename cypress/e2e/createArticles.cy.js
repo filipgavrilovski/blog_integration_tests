@@ -8,6 +8,7 @@ import 'cypress-network-idle'
 describe('New Article Page tests', () => {
   beforeEach(() => {
     cy.visit('/')
+    cy.waitForNetworkIdle(Cypress.env('waitForNetworkIdle'))
   })
   it.only('User creates a new article', () => {
     let listOfStauses = ['public','private']
@@ -16,7 +17,6 @@ describe('New Article Page tests', () => {
       articleBody: faker.lorem.lines(1),
       articleStatus: listOfStauses[Math.floor(Math.random() * listOfStauses.length)]
     }
-    NewArticlePage.articleTitleInputField().type(newArticleData.articleTitle)
     ArticlesPage.newArticleButton().click()
     cy.log("CREATE THE NEW ARTICLE").then(() => {
       NewArticlePage.articleTitleInputField().type(newArticleData.articleTitle)

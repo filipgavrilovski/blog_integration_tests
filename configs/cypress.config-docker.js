@@ -7,7 +7,7 @@ const {
 module.exports = defineConfig({
   env,
   watchForFileChanges: false,
-    numTestsKeptInMemory: 0,
+    numTestsKeptInMemory: 1,
     chromeWebSecurity: false,
     experimentalMemoryManagement: true,
     reporter: 'cypress-mochawesome-reporter',
@@ -32,7 +32,7 @@ module.exports = defineConfig({
       runMode: 2
   },
   e2e: {
-    baseUrl: 'http://localhost:3000/',
+    baseUrl: 'http://web:3000',
     setupNodeEvents(on, config) {
       on('before:run', async (details) => {
         await beforeRunHook(details)
