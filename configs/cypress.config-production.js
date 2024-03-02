@@ -1,5 +1,5 @@
 const { defineConfig } = require('cypress');
-const { env } = require('./env/env');
+const { env } = require('../env/env');
 const {
   beforeRunHook,
   afterRunHook
