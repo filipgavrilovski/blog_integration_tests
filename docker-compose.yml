@@ -2,8 +2,8 @@ version: '3'
 
 services:
   web:
-    image: filipgavrilovski/blog-api:${WEB_TAG_NAME:-latest}
-    # image: filipgavrilovski/blog-api:id_12345
+    # image: filipgavrilovski/blog-api:${WEB_TAG_NAME:-latest}
+    image: filipgavrilovski/blog-api:id_
     command: "bundle exec rails s -p 3000 -b '0.0.0.0'"
     ports:
       - '3000:3000'
