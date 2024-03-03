@@ -1,5 +1,4 @@
-name: Integration Tests By Image Tag
-
+name: Dockerized integration tests
 on:
   repository_dispatch:
     types: [cypress-docker-dev]
