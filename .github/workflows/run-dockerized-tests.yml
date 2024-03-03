@@ -48,8 +48,8 @@ jobs:
         run: docker compose ps
       - name: Check Cypress Execution
         run: |
-          docker logs -t -f blog_integration_tests_cypress_1
-          DOCKER_CONTAINER_ID=$(docker ps --no-trunc -aqf "name=^blog_integration_tests_cypress_1$")
+          docker logs -t -f blog_integration_tests-cypress-1
+          DOCKER_CONTAINER_ID=$(docker ps --no-trunc -aqf "name=^blog_integration_tests-cypress-1$")
           sudo cp /var/lib/docker/containers/$DOCKER_CONTAINER_ID/"$DOCKER_CONTAINER_ID-json.log" reports/output.log
       - uses: actions/upload-artifact@v3
         with:
