@@ -33,8 +33,8 @@ services:
   cypress:
     image: filipgavrilovski/cypress-tests:latest
     volumes:
-      - ./screenshots:/integration_tests/cypress/screenshots
-      - ./testReports:/integration_tests/cypress/reports
+      - ./screenshots:/blog_integration_tests/cypress/screenshots
+      - ./reports:/blog_integration_tests/cypress/reports
     pull_policy: always
     depends_on:
       - web

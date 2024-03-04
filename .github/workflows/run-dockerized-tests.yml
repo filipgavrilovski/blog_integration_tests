@@ -47,8 +47,6 @@ jobs:
           command: docker compose up -d
       - name: Check Running Containers
         run: docker compose ps
-      # - name: Print logs
-      #   run: docker logs -t -f blog_integration_tests-web-1
       - name: Check Cypress Execution
         run: |
           docker logs -t -f blog_integration_tests-cypress-1
