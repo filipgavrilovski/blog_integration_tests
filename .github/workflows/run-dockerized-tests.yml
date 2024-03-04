@@ -36,6 +36,8 @@ jobs:
           mkdir -p testReports
           sudo chmod 0777 testReports
           sudo chown -R 1000:docker testReports
+      - name: Run migrations:
+        run: docker compose run web bundle exec rails db:migrate
       - name: Compose UP
         uses: nick-fields/retry@v2
         with:
