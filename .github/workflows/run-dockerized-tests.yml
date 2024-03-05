@@ -88,4 +88,4 @@ jobs:
           token: ${{ secrets.ACTIONS_KEY  }}
           repository: filipgavrilovski/blogApp
           event-type: Check Status Of Dockerized Integration Tests
-          client-payload: '{"status": "${{ steps.check.outputs.status }}", "url": ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} }'
+          client-payload: '{"status": "${{ steps.check.outputs.status }}", "url": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"}'
