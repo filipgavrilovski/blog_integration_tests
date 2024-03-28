@@ -15,7 +15,6 @@ const NewArticlePage = {
     */
     articleBodyTextField: () => cy.xpath('//textarea[@name="article[body]"]'),
   
-
     /**
     * The "Status" select button, to selecct the status of the new article
     * @returns {Cypress.Chainable<JQuery<HTMLElement>>}

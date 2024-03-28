@@ -4,10 +4,8 @@ const {
   beforeRunHook,
   afterRunHook
 } = require('cypress-mochawesome-reporter/lib');
-// const { commonConfig } = require('./cy.config-common');
 module.exports = defineConfig({
   env,
-  // ...commonConfig,
   watchForFileChanges: false,
     numTestsKeptInMemory: 0,
     chromeWebSecurity: false,
